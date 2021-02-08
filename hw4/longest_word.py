@@ -1,0 +1,5 @@
+string = input('Введите строку: ')
+string = string.split()
+count = len(string)
+print('Количество слов: ', count)
+print('Самое длинное слово в строке: ', )
