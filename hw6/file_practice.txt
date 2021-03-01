@@ -1,2 +1,4 @@
 Starting practice with files
-bye!
+Hillo, wo*some inserted text*rld!
+Thi wiathir today is good.
+the end

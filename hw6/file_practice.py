@@ -1,41 +1,48 @@
 # 1.
 
-file = open('file_practice.txt', 'w')
-file.write('Starting practice with files' + '\n')
-file.close()
+with open("file_practice.txt", "w") as f:
+    print("Starting practice with files", file=f)
 
 # 2.
 
-file = open('file_practice.txt', 'r')
-print(file.read(5).upper())
-file.seek(0)
-print(file.read())
-file.close()
+with open("file_practice.txt") as f:
+    print(f.read(5).upper())
+    f.seek(0)
+    print(f.read())
 
 # 3.
 
-file = open('text.txt', 'r+')
-print(file.read())
-file.seek(0)
-print(file.read().replace('e', 'i'))
-file.close()
+with open("text.txt") as f:
+    text = f.read()
+    if text.count("i") > text.count("e"):
+        text = text.replace("i", "e")
+    else:
+        text = text.replace("e", "i")
+
+with open("file_practice.txt", "a") as f:
+    f.write(text)
 
 # 4.
 
-file = open('file_practice.txt', 'r+')
-if len(file.read()) % 2 == 0:
-    print(file.write('the end.'))
-else:
-    print(file.write('bye!'))
-file.close()
+with open("file_practice.txt", "a+") as f:
+    f.seek(0)
+    text = f.read()
+    if len(text) % 2 == 0:
+        f.write("the end")
+    else:
+        f.write("bye")
+
+    f.seek(0)
+    print(f.read())
 
 # 5.
 
-file = open('file_practice.txt', 'r+')
-file.insert(len(file) / 2, file)
-file.seek(0)
-print(file.read())
-file.close()
+with open("file_practice.txt", "r+") as f:
+    text = f.read()
+    f.seek(0)
+    center = len(text) // 2
+    text = text[:center] + "*some inserted text*" + text[center:]
+    f.write(text)
 
 
 
