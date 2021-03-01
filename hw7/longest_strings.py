@@ -1,7 +1,7 @@
 list_in = ['a', 'asd', 'bd', 'q', 'dsq']
 
 
-def longest_strings(list_in):
+def longest_strings(list):
     """ Функция возвращает список самых длинных строк из списка list_in """
     list_out = []
     for word in list:
