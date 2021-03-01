@@ -1,6 +1,3 @@
-from pathlib import Path
-
-
 def main():
     with open("phone_book.txt") as f_in:
         with open("edited_phone_book.txt", "a") as f_out:
